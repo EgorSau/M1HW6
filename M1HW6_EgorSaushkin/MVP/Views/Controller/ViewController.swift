@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 	private let padding: CGFloat = 16
 	
 	private var adapter: ISectionAdapter!
+	/// Презентор для модуля списка задач
 	var presenter: Presenter!
 	
 	private lazy var tableView: UITableView = {
@@ -92,6 +93,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ViewController: IView {
+	/// Метод для загрузки данных из презентора во вью
+	/// - Parameter viewData: Принимает модель данных для списка задач
 	func render(viewData: ViewData) {
 		viewData.taskManager.add(viewData.repository.getTasks())
 		self.adapter = SectionAdapter(taskManager: viewData.taskManager)

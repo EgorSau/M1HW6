@@ -5,11 +5,18 @@
 //  Created by Egor SAUSHKIN on 19.02.2023.
 //
 
+/// Протокол для получения задач из репозитория
 protocol ITaskRepository {
+	/// Метод для получения задач из репозитория
+	/// - Returns: Возвращает массив обычных и важных задач
 	func getTasks() -> [Task]
 }
 
+/// Стаб-класс, который генерирует задачи
 final class TaskRepositoryStub: ITaskRepository {
+	
+	/// Метод для получения задач из репозитория
+	/// - Returns: Возвращает массив обычных и важных задач
 	func getTasks() -> [Task] {
 		[
 			ImportantTask(title: "Task #1", priority: .high),
