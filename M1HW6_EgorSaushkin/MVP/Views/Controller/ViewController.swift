@@ -17,9 +17,8 @@ class ViewController: UIViewController {
 	
 	private let padding: CGFloat = 16
 	
-	private let taskManager: ITaskManager
-	private let repository: ITaskRepository
 	private var adapter: ISectionAdapter!
+	var presenter: Presenter!
 	
 	private lazy var tableView: UITableView = {
 		let table = UITableView(frame: CGRect.zero, style: .grouped)
@@ -36,18 +35,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		setupConstraints()
-	}
-	
-	init(repository: ITaskRepository, taskManager: ITaskManager) {
-		self.repository = repository
-		self.taskManager = taskManager
-		taskManager.add(repository.getTasks())
-		self.adapter = SectionAdapter(taskManager: taskManager)
-		super.init(nibName: nil, bundle: .main)
-	}
-	
-	required init?(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
+		presenter.presentView()
 	}
 	
 	private func getTaskForIndex(_ indexPath: IndexPath) -> Task {
@@ -100,5 +88,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 		let task = getTaskForIndex(indexPath)
 		task.completed.toggle()
 		tableView.reloadData()
+	}
+}
+
+extension ViewController: IView {
+	func render(viewData: ViewData) {
+		viewData.taskManager.add(viewData.repository.getTasks())
+		self.adapter = SectionAdapter(taskManager: viewData.taskManager)
 	}
 }

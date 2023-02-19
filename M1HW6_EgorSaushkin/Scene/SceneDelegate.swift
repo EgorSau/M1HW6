@@ -12,12 +12,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	var window: UIWindow?
 	var repository: ITaskRepository = TaskRepositoryStub()
 	var taskManager: ITaskManager = TaskManager()
+	let viewController = ViewController()
 	
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
+		let viewModel = ViewData(repository: repository, taskManager: taskManager)
+		let presenter = Presenter(view: viewController, model: viewModel)
+		viewController.presenter = presenter
 		window = UIWindow (frame: windowScene.coordinateSpace.bounds)
 		window?.windowScene = windowScene
-		window?.rootViewController = ViewController(repository: repository, taskManager: taskManager)
+		window?.rootViewController = viewController
 		window?.makeKeyAndVisible()
 	}
 	

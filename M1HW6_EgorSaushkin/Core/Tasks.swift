@@ -1,5 +1,5 @@
 //
-//  Model.swift
+//  Tasks.swift
 //  M1HW4_EgorSaushkin
 //
 //  Created by Egor SAUSHKIN on 12.02.2023.
