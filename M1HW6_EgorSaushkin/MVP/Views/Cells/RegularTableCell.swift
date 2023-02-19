@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Ячейка для обычной задачи
+/// Ячейка для обычной задачи.
 class RegularTableCell: UITableViewCell {
 	
 	private lazy var stack: UIStackView = {
@@ -57,7 +57,7 @@ class RegularTableCell: UITableViewCell {
 		])
 	}
 	
-	/// настраивает ячейку для регулярной задачи
+	/// Настраивает ячейку для регулярной задачи.
 	func setupCell(withViewModel viewModel: Task) {
 		guard let model = viewModel as? RegularTask else { return }
 		taskLabel.text = "\(String(describing: model.title))"

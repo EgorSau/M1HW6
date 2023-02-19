@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Ячейка для приоритетной задачи
+/// Ячейка для приоритетной задачи.
 class ImportantTableCell: UITableViewCell {
 	
 	private var currentDate = Date()
@@ -60,7 +60,7 @@ class ImportantTableCell: UITableViewCell {
 		])
 	}
 	
-	/// настраивает ячейку для важной задачи
+	/// Настраивает ячейку для важной задачи.
 	func setupCell(withViewModel viewModel: Task) {
 		guard let model = viewModel as? ImportantTask else { return }
 		guard let date = model.deadline?.formatted() else { return }

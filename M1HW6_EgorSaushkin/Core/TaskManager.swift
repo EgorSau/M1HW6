@@ -7,7 +7,7 @@
 
 import UIKit
 
-/// Класс для управления задачами
+/// Класс для управления задачами.
 final class TaskManager {
 	private var tasksList = [Task]()
 	
@@ -37,12 +37,12 @@ final class TaskManager {
 }
 
 extension TaskManager: ITaskManager {
-	/// показывается все задачи
+	/// Показывается все задачи.
 	func allTasks() -> [Task] {
 		showMeAllTasks()
 	}
 	
-	/// показывается выполненные задачи с сортировкой
+	/// Показывается выполненные задачи с сортировкой.
 	func completedTasksSorted() -> [Task] {
 		completedList().sorted {
 			if let task1 = $0 as? ImportantTask, let task2 = $1 as? ImportantTask {
@@ -52,7 +52,7 @@ extension TaskManager: ITaskManager {
 		}
 	}
 	
-	/// показывается НЕ выполненные задачи с сортировкой
+	/// Показывается НЕ выполненные задачи с сортировкой.
 	func notCompletedTasksSorted() -> [Task] {
 		notCompletedList().sorted {
 			if let task1 = $0 as? ImportantTask, let task2 = $1 as? ImportantTask {
@@ -62,22 +62,22 @@ extension TaskManager: ITaskManager {
 		}
 	}
 	
-	/// добавляет задачи в список
+	/// Добавляет задачи в список.
 	func add(_ tasks: [Task]) {
 		tasks.forEach({addTask($0)})
 	}
 	
-	/// удаляет задачи из списка
+	/// Удаляет задачи из списка.
 	func delete(_ task: Task) {
 		deleteTask(task)
 	}
 	
-	/// показывается все выполненные задачи
+	/// Показывается все выполненные задачи.
 	func completedList() -> [Task] {
 		showMeCompletedTasks()
 	}
 	
-	/// показывается все НЕ выполненные задачи
+	/// Показывается все НЕ выполненные задачи.
 	func notCompletedList() -> [Task] {
 		showMeNotCompletedTasks()
 	}
