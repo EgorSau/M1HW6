@@ -17,7 +17,7 @@
                BlueprintIdentifier = "204E357E2999021A0050A07D"
                BuildableName = "M1HW5_EgorSaushkin.app"
                BlueprintName = "M1HW5_EgorSaushkin"
-               ReferencedContainer = "container:M1HW6_EgorSaushkin.xcodeproj">
+               ReferencedContainer = "container:M1HW7_EgorSaushkin.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,7 +47,7 @@
             BlueprintIdentifier = "204E357E2999021A0050A07D"
             BuildableName = "M1HW5_EgorSaushkin.app"
             BlueprintName = "M1HW5_EgorSaushkin"
-            ReferencedContainer = "container:M1HW6_EgorSaushkin.xcodeproj">
+            ReferencedContainer = "container:M1HW7_EgorSaushkin.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -57,16 +57,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "204E357E2999021A0050A07D"
             BuildableName = "M1HW5_EgorSaushkin.app"
             BlueprintName = "M1HW5_EgorSaushkin"
-            ReferencedContainer = "container:M1HW6_EgorSaushkin.xcodeproj">
+            ReferencedContainer = "container:M1HW7_EgorSaushkin.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
